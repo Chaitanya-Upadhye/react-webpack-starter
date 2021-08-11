@@ -29,7 +29,6 @@ function login(username, password) {
 function logout() {
   // remove user from local storage to log user out
   localStorage.removeItem("currentUser");
-  history.push("/login");
 }
 export function handleResponse(response) {
   return response.text().then((text) => {

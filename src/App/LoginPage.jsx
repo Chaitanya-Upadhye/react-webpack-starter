@@ -6,8 +6,8 @@ import { authService } from "../services/authService";
 
 function LoginPage(props) {
   useEffect(() => {
-    if (authService.currentUserValue) props.history.push("/");
-  }, []);
+    if (localStorage.getItem("currentUser")) props.history.push("/");
+  });
 
   return (
     <div>
@@ -33,9 +33,11 @@ function LoginPage(props) {
               const { from } = {
                 from: { pathname: "/" },
               };
-              props.history.push(from);
+              console.log(props);
+              props.history.push("/ToDos");
             },
             (error) => {
+              console.log(error);
               setSubmitting(false);
               setStatus(error);
             }

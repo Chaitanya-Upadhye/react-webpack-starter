@@ -34,6 +34,7 @@ module.exports = {
                 ],
                 "@babel/preset-react",
               ],
+              plugins: ["@babel/transform-runtime"],
             },
           },
         ],
